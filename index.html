@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
-<link rel="preconnect" href="https://cdn.jsdelivr.net"/>
 <style>
 /* ─── RESET & ROOT ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -381,8 +380,8 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   transform:translateY(-2px);
   box-shadow:0 4px 16px rgba(99,102,241,0.2);
 }
-.si{width:18px;height:18px;object-fit:contain;flex-shrink:0;display:block}
-.si-inv{width:18px;height:18px;object-fit:contain;flex-shrink:0;display:block;filter:brightness(0) invert(1)}
+.si{width:20px;height:20px;object-fit:contain;flex-shrink:0;display:block;border-radius:3px}
+.si-use{width:20px;height:20px;flex-shrink:0;display:block;overflow:visible}
 .si-svg{width:18px;height:18px;flex-shrink:0;stroke:var(--text3)}
 
 /* ─── EXPERIENCE ─── */
@@ -661,6 +660,43 @@ footer span{color:var(--accent2)}
 </style>
 </head>
 <body>
+<!-- ── Inline SVG icons for skills without a local image ── -->
+<svg aria-hidden="true" style="display:none;position:absolute;width:0;height:0">
+  <defs>
+    <symbol id="si-node" viewBox="0 0 24 24">
+      <path fill="#3C873A" d="M12 2l9.5 5.5v11L12 24l-9.5-5.5V7.5z"/>
+      <text x="12" y="14.5" font-family="Arial,sans-serif" font-weight="700" font-size="5.2" fill="#fff" text-anchor="middle">node.js</text>
+    </symbol>
+    <symbol id="si-expo" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11.5" fill="#1C1C1E"/>
+      <text x="12" y="15.5" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#fff" text-anchor="middle">expo</text>
+    </symbol>
+    <symbol id="si-vscode" viewBox="0 0 24 24">
+      <rect width="24" height="24" rx="3" fill="#007ACC"/>
+      <text x="12" y="17" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#fff" text-anchor="middle">VS</text>
+    </symbol>
+    <symbol id="si-composer" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11.5" fill="#885630"/>
+      <text x="12" y="16.5" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#fff" text-anchor="middle">C</text>
+    </symbol>
+    <symbol id="si-npm" viewBox="0 0 24 24">
+      <rect width="24" height="24" rx="3" fill="#CB3837"/>
+      <text x="12" y="17" font-family="Arial,sans-serif" font-weight="700" font-size="9.5" fill="#fff" text-anchor="middle">npm</text>
+    </symbol>
+    <symbol id="si-android" viewBox="0 0 24 24">
+      <rect width="24" height="24" rx="4" fill="#3DDC84"/>
+      <text x="12" y="17" font-family="Arial,sans-serif" font-weight="700" font-size="9.5" fill="#1a1a1a" text-anchor="middle">AS</text>
+    </symbol>
+    <symbol id="si-xampp" viewBox="0 0 24 24">
+      <rect width="24" height="24" rx="3" fill="#D22128"/>
+      <text x="12" y="15.5" font-family="Arial,sans-serif" font-weight="700" font-size="7.5" fill="#fff" text-anchor="middle">XAMPP</text>
+    </symbol>
+    <symbol id="si-dbeaver" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11.5" fill="#373552"/>
+      <text x="12" y="16.5" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#fff" text-anchor="middle">DB</text>
+    </symbol>
+  </defs>
+</svg>
 
 <!-- NAV -->
 <nav id="nav">
@@ -792,10 +828,10 @@ footer span{color:var(--accent2)}
       <div class="sk-card reveal reveal-d1">
         <p class="sk-label">Languages</p>
         <div class="tags">
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="">PHP</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="">TypeScript</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="">JavaScript ES6+</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="">Dart</span>
+          <span class="sp"><img class="si" src="icons/php.jpg" alt="">PHP</span>
+          <span class="sp"><img class="si" src="icons/typscript.jpg" alt="">TypeScript</span>
+          <span class="sp"><img class="si" src="icons/javascript.jpg" alt="">JavaScript ES6+</span>
+          <span class="sp"><img class="si" src="icons/dart.jpg" alt="">Dart</span>
         </div>
       </div>
 
@@ -803,11 +839,11 @@ footer span{color:var(--accent2)}
       <div class="sk-card reveal reveal-d2">
         <p class="sk-label">Frameworks &amp; Libraries</p>
         <div class="tags">
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="">Laravel</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="">React Native</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="">Flutter</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="">Node.js</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/expo/expo-original.svg" alt="">Expo</span>
+          <span class="sp"><img class="si" src="icons/laravel.jpg" alt="">Laravel</span>
+          <span class="sp"><img class="si" src="icons/react.jpg" alt="">React Native</span>
+          <span class="sp"><img class="si" src="icons/flutter.jpg" alt="">Flutter</span>
+          <span class="sp"><svg class="si-use" aria-hidden="true"><use href="#si-node"/></svg>Node.js</span>
+          <span class="sp"><svg class="si-use" aria-hidden="true"><use href="#si-expo"/></svg>Expo</span>
         </div>
       </div>
 
@@ -815,24 +851,23 @@ footer span{color:var(--accent2)}
       <div class="sk-card reveal reveal-d3">
         <p class="sk-label">Frontend</p>
         <div class="tags">
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="">HTML5</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="">CSS3</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="">Bootstrap</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="">Blade Templating</span>
+          <span class="sp"><img class="si" src="icons/html.jpg" alt="">HTML5</span>
+          <span class="sp"><img class="si" src="icons/css.jpg" alt="">CSS3</span>
+          <span class="sp"><img class="si" src="icons/tailwind.jpg" alt="">Tailwind CSS</span>
+          <span class="sp"><img class="si" src="icons/bootstrap.jpg" alt="">Bootstrap</span>
+          <span class="sp"><img class="si" src="icons/laravel.jpg" alt="">Blade Templating</span>
         </div>
       </div>
 
-      <!-- Database -->
+      <!-- Database & ORM -->
       <div class="sk-card reveal reveal-d4">
         <p class="sk-label">Database &amp; ORM</p>
         <div class="tags">
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="">MySQL</span>
-          <span class="sp">
-            <svg class="si-svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            SQL
-          </span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="">Eloquent ORM</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="">Prisma ORM</span>
+          <span class="sp"><img class="si" src="icons/mysql.jpg" alt="">MySQL</span>
+          <span class="sp"><img class="si" src="icons/sql.jpg" alt="">SQL</span>
+          <span class="sp"><img class="si" src="icons/firebase.jpg" alt="">Firebase</span>
+          <span class="sp"><img class="si" src="icons/laravel.jpg" alt="">Eloquent ORM</span>
+          <span class="sp"><img class="si" src="icons/prisma.jpg" alt="">Prisma ORM</span>
           <span class="sp">
             <svg class="si-svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
             DB Design &amp; Migration
@@ -844,22 +879,16 @@ footer span{color:var(--accent2)}
       <div class="sk-card reveal reveal-d5">
         <p class="sk-label">Tools &amp; Dev Environment</p>
         <div class="tags">
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="">Git</span>
-          <span class="sp"><img class="si-inv" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="">GitHub</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="">VS Code</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/composer/composer-original.svg" alt="">Composer</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="">npm</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="">Postman</span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" alt="">Android Studio</span>
-          <span class="sp">
-            <svg class="si-svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            DBeaver
-          </span>
-          <span class="sp"><img class="si" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apache/apache-original.svg" alt="">XAMPP</span>
-          <span class="sp">
-            <svg class="si-svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            Swagger / OpenAPI
-          </span>
+          <span class="sp"><img class="si" src="icons/git.jpg" alt="">Git</span>
+          <span class="sp"><img class="si" src="icons/github.jpg" alt="">GitHub</span>
+          <span class="sp"><svg class="si-use" aria-hidden="true"><use href="#si-vscode"/></svg>VS Code</span>
+          <span class="sp"><svg class="si-use" aria-hidden="true"><use href="#si-composer"/></svg>Composer</span>
+          <span class="sp"><svg class="si-use" aria-hidden="true"><use href="#si-npm"/></svg>npm</span>
+          <span class="sp"><img class="si" src="icons/postman.jpg" alt="">Postman</span>
+          <span class="sp"><svg class="si-use" aria-hidden="true"><use href="#si-android"/></svg>Android Studio</span>
+          <span class="sp"><svg class="si-use" aria-hidden="true"><use href="#si-dbeaver"/></svg>DBeaver</span>
+          <span class="sp"><svg class="si-use" aria-hidden="true"><use href="#si-xampp"/></svg>XAMPP</span>
+          <span class="sp"><img class="si" src="icons/swagger.png" alt="">Swagger / OpenAPI</span>
         </div>
       </div>
 
@@ -1091,6 +1120,17 @@ function closeMob() {
   document.getElementById('mobileNav').classList.remove('open');
   document.getElementById('ham').classList.remove('open');
 }
+
+// ── FIX: prevent file:// anchor-navigation security error ──────────────
+// Intercept all #hash link clicks and use scrollIntoView instead,
+// so the browser never attempts a file:// URL navigation.
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var id = this.getAttribute('href').slice(1);
+    var el = id ? document.getElementById(id) : null;
+    if (el) { e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+  });
+});
 </script>
 </body>
 </html>
