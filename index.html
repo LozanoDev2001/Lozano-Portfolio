@@ -433,7 +433,7 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 
 /* ─── PROJECTS ─── */
 #projects{background:var(--dark)}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
 .proj-card{
   background:var(--surface);border:1px solid var(--border);
   border-radius:20px;padding:30px;
@@ -471,14 +471,26 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 .proj-pts li{display:flex;gap:10px;font-size:13px;color:var(--text2);line-height:1.6}
 .proj-pts li::before{content:"";width:4px;height:4px;background:var(--accent2);border-radius:50%;flex-shrink:0;margin-top:9px}
 .proj-stack{
-  display:flex;flex-wrap:wrap;gap:6px;
-  padding-top:8px;border-top:1px solid var(--border);
+  display:flex;flex-wrap:wrap;gap:7px;
+  padding-top:12px;border-top:1px solid var(--border);
+}
+.proj-stack-label{
+  width:100%;font-size:10px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text3);margin-bottom:2px;
 }
 .stag{
-  background:rgba(255,255,255,0.05);
-  border:1px solid var(--border);
-  border-radius:6px;padding:3px 10px;
-  font-size:11.5px;color:var(--text3);font-weight:500;
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(99,102,241,0.12);
+  border:1px solid rgba(99,102,241,0.3);
+  border-radius:6px;padding:4px 11px;
+  font-size:11.5px;color:var(--accent2);font-weight:600;
+  transition:all 0.2s;
+}
+.stag:hover{
+  background:rgba(99,102,241,0.22);
+  border-color:rgba(99,102,241,0.55);
+  transform:translateY(-1px);
 }
 
 /* ─── EDUCATION ─── */
@@ -969,9 +981,12 @@ footer span{color:var(--accent2)}
           <li>Managed source code and feature branches using Git for version control</li>
         </ul>
         <div class="proj-stack">
+          <span class="proj-stack-label">Tech Stack</span>
           <span class="stag">TypeScript</span><span class="stag">React Native</span><span class="stag">SQL</span><span class="stag">Prisma ORM</span><span class="stag">Swagger</span><span class="stag">DBeaver</span><span class="stag">Git</span>
         </div>
       </div>
+
+      <!-- School Management Portal -->
       <div class="proj-card reveal reveal-d3">
         <div class="proj-head">
           <div class="proj-ico"><svg viewBox="0 0 24 24" stroke-width="1.75"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
@@ -984,9 +999,42 @@ footer span{color:var(--accent2)}
           <li>Used Git for version control and collaborative development throughout the lifecycle</li>
         </ul>
         <div class="proj-stack">
+          <span class="proj-stack-label">Tech Stack</span>
           <span class="stag">Laravel</span><span class="stag">Flutter</span><span class="stag">MySQL</span><span class="stag">Eloquent ORM</span><span class="stag">Blade</span><span class="stag">Git</span>
         </div>
       </div>
+
+      <!-- PCF Presenter -->
+      <div class="proj-card reveal reveal-d4">
+        <div class="proj-head">
+          <div class="proj-ico">
+            <svg viewBox="0 0 24 24" stroke-width="1.75" fill="none">
+              <rect x="2" y="3" width="20" height="13" rx="2"/>
+              <path d="M8 21h8M12 16v5"/>
+              <path d="M7 8l2.5 2.5L7 13" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 13h4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <p class="proj-name">PCF Presenter</p>
+            <p class="proj-type">Desktop App · Windows / macOS / Linux · Client Project</p>
+          </div>
+        </div>
+        <p class="proj-desc">Offline-first worship presentation system for PCF Church — a full desktop app with Wi-Fi remote control, real-time WebSocket sync, and zero internet dependency during live Sunday services.</p>
+        <ul class="proj-pts">
+          <li>Architected a RESTful JSON API backend with Laravel and SQLite for lightweight offline-first local data persistence</li>
+          <li>Built the main projector operator interface as a cross-platform desktop app using Flutter (Windows / macOS / Linux)</li>
+          <li>Developed a Flutter mobile companion app as a Wi-Fi remote for song navigation and slide control</li>
+          <li>Integrated Laravel Reverb (WebSockets) for real-time sync across projector output, stage display, and remote control</li>
+          <li>Implemented a Song Library with lyric search and section tagging, plus a Scripture Browser with KJV, ASV, and Tagalog Bibles</li>
+          <li>Designed a Stage Display view showing current/next slide, countdown timer, and operator messages</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="proj-stack-label">Tech Stack</span>
+          <span class="stag">Flutter</span><span class="stag">Dart</span><span class="stag">Laravel</span><span class="stag">PHP</span><span class="stag">SQLite</span><span class="stag">REST API</span><span class="stag">WebSockets</span><span class="stag">Laravel Reverb</span><span class="stag">Git</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
