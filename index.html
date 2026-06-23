@@ -433,65 +433,103 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 
 /* ─── PROJECTS ─── */
 #projects{background:var(--dark)}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
+/* ─── PROJECTS ─── */
+#projects{background:var(--dark)}
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
 .proj-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:20px;padding:30px;
-  display:flex;flex-direction:column;gap:16px;
-  transition:border-color 0.2s,transform 0.25s,background 0.2s;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:0;
+  display:flex;flex-direction:column;
+  transition:border-color 0.25s,transform 0.25s,box-shadow 0.25s;
   position:relative;overflow:hidden;
 }
+/* accent top bar */
 .proj-card::before{
   content:"";
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(99,102,241,0.05) 0%,transparent 60%);
-  pointer-events:none;transition:opacity 0.3s;opacity:0;
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--gradient);
+  opacity:0;transition:opacity 0.3s;
 }
 .proj-card:hover{
-  border-color:rgba(99,102,241,0.45);
-  transform:translateY(-5px);
-  background:var(--surface2);
+  border-color:rgba(99,102,241,0.5);
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(99,102,241,0.2);
 }
 .proj-card:hover::before{opacity:1}
+/* card body */
+.proj-body{
+  padding:28px 28px 0;
+  display:flex;flex-direction:column;gap:16px;
+  flex:1;
+}
 .proj-head{display:flex;align-items:flex-start;gap:14px}
 .proj-ico{
-  width:46px;height:46px;
-  background:rgba(99,102,241,0.15);
+  width:48px;height:48px;
+  background:rgba(99,102,241,0.12);
   border:1px solid rgba(99,102,241,0.25);
-  border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:background 0.2s,border-color 0.2s;
 }
+.proj-card:hover .proj-ico{background:rgba(99,102,241,0.22);border-color:rgba(99,102,241,0.45)}
 .proj-ico svg{width:22px;height:22px;stroke:var(--accent2);fill:none}
 .proj-name{
-  font-family:"Syne",sans-serif;font-size:17.5px;
-  font-weight:800;letter-spacing:-0.02em;color:var(--text);line-height:1.3;
+  font-family:"Syne",sans-serif;font-size:18px;
+  font-weight:800;letter-spacing:-0.02em;color:var(--text);line-height:1.25;
 }
-.proj-type{font-size:11px;color:var(--accent2);font-weight:600;margin-top:4px;text-transform:uppercase;letter-spacing:0.08em}
-.proj-desc{font-size:14px;color:var(--text2);line-height:1.75;flex:1}
-.proj-pts{list-style:none;display:flex;flex-direction:column;gap:8px}
-.proj-pts li{display:flex;gap:10px;font-size:13px;color:var(--text2);line-height:1.6}
-.proj-pts li::before{content:"";width:4px;height:4px;background:var(--accent2);border-radius:50%;flex-shrink:0;margin-top:9px}
+.proj-type{
+  font-size:10.5px;color:var(--accent2);font-weight:700;
+  margin-top:5px;text-transform:uppercase;letter-spacing:0.1em;
+  display:flex;align-items:center;gap:5px;flex-wrap:wrap;
+}
+.proj-desc{font-size:14px;color:var(--text2);line-height:1.78}
+.proj-pts{list-style:none;display:flex;flex-direction:column;gap:9px}
+.proj-pts li{
+  display:flex;gap:11px;
+  font-size:13.5px;color:var(--text2);line-height:1.65;
+}
+.proj-pts li::before{
+  content:"";width:5px;height:5px;
+  background:var(--accent);border-radius:50%;
+  flex-shrink:0;margin-top:9px;
+  box-shadow:0 0 6px rgba(99,102,241,0.6);
+}
+/* tech stack footer */
 .proj-stack{
+  margin-top:auto;
+  padding:16px 28px 24px;
+  border-top:1px solid var(--border);
   display:flex;flex-wrap:wrap;gap:7px;
-  padding-top:12px;border-top:1px solid var(--border);
+  align-items:center;
 }
 .proj-stack-label{
   width:100%;font-size:10px;font-weight:700;
-  letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--text3);margin-bottom:2px;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--text3);margin-bottom:4px;
 }
 .stag{
   display:inline-flex;align-items:center;gap:5px;
-  background:rgba(99,102,241,0.12);
-  border:1px solid rgba(99,102,241,0.3);
-  border-radius:6px;padding:4px 11px;
+  background:rgba(99,102,241,0.1);
+  border:1px solid rgba(99,102,241,0.28);
+  border-radius:6px;padding:4px 10px;
   font-size:11.5px;color:var(--accent2);font-weight:600;
   transition:all 0.2s;
 }
 .stag:hover{
-  background:rgba(99,102,241,0.22);
-  border-color:rgba(99,102,241,0.55);
-  transform:translateY(-1px);
+  background:rgba(99,102,241,0.2);
+  border-color:rgba(99,102,241,0.5);
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(99,102,241,0.2);
 }
+.stag-ico{width:14px;height:14px;object-fit:contain;border-radius:2px;flex-shrink:0}
+.stag-ico-svg{width:14px;height:14px;flex-shrink:0;display:block;overflow:visible}
+.proj-pts-2col{columns:2;column-gap:28px}
+@media(max-width:900px){.proj-pts-2col{columns:1}}
 
 /* ─── EDUCATION ─── */
 #education{background:var(--dark2)}
@@ -969,69 +1007,101 @@ footer span{color:var(--accent2)}
     <p class="sec-label reveal">Projects</p>
     <h2 class="sec-title reveal reveal-d1">Things I've built</h2>
     <div class="proj-grid">
+      <!-- HRIS -->
       <div class="proj-card reveal reveal-d2">
-        <div class="proj-head">
-          <div class="proj-ico"><svg viewBox="0 0 24 24" stroke-width="1.75"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <div><p class="proj-name">Human Resource Information System</p><p class="proj-type">Web &amp; Mobile · Internship</p></div>
+        <div class="proj-body">
+          <div class="proj-head">
+            <div class="proj-ico"><svg viewBox="0 0 24 24" stroke-width="1.75"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div><p class="proj-name">Human Resource Information System</p><p class="proj-type">Web &amp; Mobile · Internship</p></div>
+          </div>
+          <p class="proj-desc">Full-featured HRIS covering employee records, attendance tracking, and HR workflows — built for both web and mobile with a unified TypeScript backend.</p>
+          <ul class="proj-pts">
+            <li>Architected the backend with TypeScript and managed DB schema using Prisma ORM with SQL</li>
+            <li>Documented all REST API endpoints with Swagger for streamlined team collaboration and QA</li>
+            <li>Managed source code and feature branches using Git for version control</li>
+          </ul>
         </div>
-        <p class="proj-desc">Full-featured HRIS covering employee records, attendance tracking, and HR workflows — built for both web and mobile with a unified TypeScript backend.</p>
-        <ul class="proj-pts">
-          <li>Architected the backend with TypeScript and managed DB schema using Prisma ORM with SQL</li>
-          <li>Documented all REST API endpoints with Swagger for streamlined team collaboration and QA</li>
-          <li>Managed source code and feature branches using Git for version control</li>
-        </ul>
         <div class="proj-stack">
           <span class="proj-stack-label">Tech Stack</span>
-          <span class="stag">TypeScript</span><span class="stag">React Native</span><span class="stag">SQL</span><span class="stag">Prisma ORM</span><span class="stag">Swagger</span><span class="stag">DBeaver</span><span class="stag">Git</span>
+          <span class="stag"><img class="stag-ico" src="icons/typscript.jpg" alt="">TypeScript</span>
+          <span class="stag"><img class="stag-ico" src="icons/react.jpg" alt="">React Native</span>
+          <span class="stag"><img class="stag-ico" src="icons/sql.jpg" alt="">SQL</span>
+          <span class="stag"><img class="stag-ico" src="icons/prisma.jpg" alt="">Prisma ORM</span>
+          <span class="stag"><img class="stag-ico" src="icons/swagger.png" alt="">Swagger</span>
+          <span class="stag"><svg class="stag-ico-svg" aria-hidden="true"><use href="#si-dbeaver"/></svg>DBeaver</span>
+          <span class="stag"><img class="stag-ico" src="icons/git.jpg" alt="">Git</span>
         </div>
       </div>
 
       <!-- School Management Portal -->
       <div class="proj-card reveal reveal-d3">
-        <div class="proj-head">
-          <div class="proj-ico"><svg viewBox="0 0 24 24" stroke-width="1.75"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
-          <div><p class="proj-name">School Management Portal</p><p class="proj-type">Web &amp; Mobile · Academic</p></div>
+        <div class="proj-body">
+          <div class="proj-head">
+            <div class="proj-ico"><svg viewBox="0 0 24 24" stroke-width="1.75"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+            <div><p class="proj-name">School Management Portal</p><p class="proj-type">Web &amp; Mobile · Academic</p></div>
+          </div>
+          <p class="proj-desc">School management system for a TESDA institution covering enrollment, grading, and scheduling — with a Flutter companion app for Android.</p>
+          <ul class="proj-pts">
+            <li>Built the web backend using Laravel MVC with Eloquent ORM and MySQL for data persistence</li>
+            <li>Created a companion mobile app using Flutter for student and admin access on Android</li>
+            <li>Used Git for version control and collaborative development throughout the lifecycle</li>
+          </ul>
         </div>
-        <p class="proj-desc">School management system for a TESDA institution covering enrollment, grading, and scheduling — with a Flutter companion app for Android.</p>
-        <ul class="proj-pts">
-          <li>Built the web backend using Laravel MVC with Eloquent ORM and MySQL for data persistence</li>
-          <li>Created a companion mobile app using Flutter for student and admin access on Android</li>
-          <li>Used Git for version control and collaborative development throughout the lifecycle</li>
-        </ul>
         <div class="proj-stack">
           <span class="proj-stack-label">Tech Stack</span>
-          <span class="stag">Laravel</span><span class="stag">Flutter</span><span class="stag">MySQL</span><span class="stag">Eloquent ORM</span><span class="stag">Blade</span><span class="stag">Git</span>
+          <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Laravel</span>
+          <span class="stag"><img class="stag-ico" src="icons/flutter.jpg" alt="">Flutter</span>
+          <span class="stag"><img class="stag-ico" src="icons/mysql.jpg" alt="">MySQL</span>
+          <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Eloquent ORM</span>
+          <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Blade</span>
+          <span class="stag"><img class="stag-ico" src="icons/git.jpg" alt="">Git</span>
         </div>
       </div>
 
       <!-- PCF Presenter -->
-      <div class="proj-card reveal reveal-d4">
-        <div class="proj-head">
-          <div class="proj-ico">
-            <svg viewBox="0 0 24 24" stroke-width="1.75" fill="none">
-              <rect x="2" y="3" width="20" height="13" rx="2"/>
-              <path d="M8 21h8M12 16v5"/>
-              <path d="M7 8l2.5 2.5L7 13" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 13h4" stroke-linecap="round"/>
-            </svg>
+      <div class="proj-card reveal reveal-d4" style="grid-column:1/-1">
+        <div class="proj-body">
+          <div class="proj-head">
+            <div class="proj-ico">
+              <svg viewBox="0 0 24 24" stroke-width="1.75" fill="none">
+                <rect x="2" y="3" width="20" height="13" rx="2"/>
+                <path d="M8 21h8M12 16v5"/>
+                <path d="M7 8l2.5 2.5L7 13" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 13h4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="proj-name">PCF Presenter</p>
+              <p class="proj-type">Desktop App (Windows / macOS / Linux) &nbsp;·&nbsp; Mobile Remote &nbsp;·&nbsp; Client Project</p>
+            </div>
           </div>
-          <div>
-            <p class="proj-name">PCF Presenter</p>
-            <p class="proj-type">Desktop App · Windows / macOS / Linux · Client Project</p>
-          </div>
+          <p class="proj-desc">Offline-first worship presentation system for PCF Church — a full desktop app with Wi-Fi mobile remote, real-time WebSocket sync, and zero internet dependency during live Sunday services.</p>
+          <ul class="proj-pts proj-pts-2col">
+            <li>Architected a RESTful JSON API backend with Laravel and SQLite for lightweight offline-first local data persistence</li>
+            <li>Built the main projector operator interface as a cross-platform desktop app using Flutter (Windows / macOS / Linux)</li>
+            <li>Developed a Flutter mobile companion app as a Wi-Fi remote for song navigation and slide control</li>
+            <li>Integrated Laravel Reverb (WebSockets) for real-time sync across projector output, stage display, and remote control</li>
+            <li>Implemented a Song Library with lyric search and section tagging, plus a Scripture Browser with KJV, ASV, and Tagalog Bibles</li>
+            <li>Designed a Stage Display view showing current/next slide, countdown timer, and operator messages</li>
+          </ul>
         </div>
-        <p class="proj-desc">Offline-first worship presentation system for PCF Church — a full desktop app with Wi-Fi remote control, real-time WebSocket sync, and zero internet dependency during live Sunday services.</p>
-        <ul class="proj-pts">
-          <li>Architected a RESTful JSON API backend with Laravel and SQLite for lightweight offline-first local data persistence</li>
-          <li>Built the main projector operator interface as a cross-platform desktop app using Flutter (Windows / macOS / Linux)</li>
-          <li>Developed a Flutter mobile companion app as a Wi-Fi remote for song navigation and slide control</li>
-          <li>Integrated Laravel Reverb (WebSockets) for real-time sync across projector output, stage display, and remote control</li>
-          <li>Implemented a Song Library with lyric search and section tagging, plus a Scripture Browser with KJV, ASV, and Tagalog Bibles</li>
-          <li>Designed a Stage Display view showing current/next slide, countdown timer, and operator messages</li>
-        </ul>
         <div class="proj-stack">
           <span class="proj-stack-label">Tech Stack</span>
-          <span class="stag">Flutter</span><span class="stag">Dart</span><span class="stag">Laravel</span><span class="stag">PHP</span><span class="stag">SQLite</span><span class="stag">REST API</span><span class="stag">WebSockets</span><span class="stag">Laravel Reverb</span><span class="stag">Git</span>
+          <span class="stag"><img class="stag-ico" src="icons/flutter.jpg" alt="">Flutter</span>
+          <span class="stag"><img class="stag-ico" src="icons/dart.jpg" alt="">Dart</span>
+          <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Laravel</span>
+          <span class="stag"><img class="stag-ico" src="icons/php.jpg" alt="">PHP</span>
+          <span class="stag"><img class="stag-ico" src="icons/sql.jpg" alt="">SQLite</span>
+          <span class="stag">
+            <svg class="stag-ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            REST API
+          </span>
+          <span class="stag">
+            <svg class="stag-ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            WebSockets
+          </span>
+          <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Laravel Reverb</span>
+          <span class="stag"><img class="stag-ico" src="icons/git.jpg" alt="">Git</span>
         </div>
       </div>
 
