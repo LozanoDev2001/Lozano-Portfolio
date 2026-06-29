@@ -11,21 +11,21 @@
 /* ─── RESET & ROOT ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --dark:#09090f;
-  --dark2:#11111d;
-  --dark3:#18182a;
-  --surface:rgba(255,255,255,0.04);
-  --surface2:rgba(255,255,255,0.07);
-  --border:rgba(255,255,255,0.09);
-  --border2:rgba(255,255,255,0.15);
-  --text:#f0f0f8;
-  --text2:#a8a8c0;
-  --text3:#6b6b88;
-  --accent:#6366f1;
-  --accent2:#818cf8;
-  --green:#22d3a0;
-  --gradient:linear-gradient(135deg,#6366f1,#a78bfa);
-  --gradient2:linear-gradient(135deg,#818cf8,#22d3a0);
+  --dark:#ffffff;
+  --dark2:#f0fdff;
+  --dark3:#e0f9fe;
+  --surface:rgba(6,182,212,0.05);
+  --surface2:rgba(6,182,212,0.08);
+  --border:rgba(6,182,212,0.15);
+  --border2:rgba(6,182,212,0.25);
+  --text:#0a0a0a;
+  --text2:#0e7490;
+  --text3:#06b6d4;
+  --accent:#06b6d4;
+  --accent2:#0891b2;
+  --green:#06b6d4;
+  --gradient:linear-gradient(135deg,#0891b2,#06b6d4);
+  --gradient2:linear-gradient(135deg,#0e7490,#22d3ee);
 }
 html{scroll-behavior:smooth}
 body{
@@ -61,9 +61,10 @@ nav{
   transition:background 0.4s,border-color 0.4s,backdrop-filter 0.4s;
 }
 nav.scrolled{
-  background:rgba(9,9,15,0.9);
+  background:rgba(255,255,255,0.92);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
+  box-shadow:0 4px 24px rgba(6,182,212,0.1);
 }
 .nav-logo{
   font-family:"Syne",sans-serif;font-weight:800;font-size:17px;
@@ -73,7 +74,7 @@ nav.scrolled{
 .nav-logo-dot{
   width:8px;height:8px;border-radius:50%;
   background:var(--gradient);
-  box-shadow:0 0 12px rgba(99,102,241,0.6);
+  box-shadow:0 0 12px rgba(6,182,212,0.6);
 }
 .nav-links{display:flex;gap:2px;list-style:none}
 .nav-links a{
@@ -89,7 +90,7 @@ nav.scrolled{
   border-radius:999px;font-size:13px;font-weight:600;
   text-decoration:none;display:none;
   transition:opacity 0.2s,transform 0.2s;
-  box-shadow:0 4px 20px rgba(99,102,241,0.35);
+  box-shadow:0 4px 20px rgba(6,182,212,0.35);
 }
 .nav-cta:hover{opacity:0.88;transform:translateY(-1px)}
 nav.scrolled .nav-cta{display:inline-block}
@@ -134,7 +135,7 @@ nav.scrolled .nav-cta{display:inline-block}
   position:absolute;
   width:700px;height:700px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(6,182,212,0.18) 0%,transparent 70%);
   top:-15%;right:-10%;
   pointer-events:none;
 }
@@ -154,15 +155,15 @@ nav.scrolled .nav-cta{display:inline-block}
 .hero-text{display:flex;flex-direction:column;gap:28px}
 .badge{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(99,102,241,0.15);
-  border:1px solid rgba(99,102,241,0.3);
-  color:#818cf8;font-size:12px;font-weight:700;
+  background:rgba(6,182,212,0.15);
+  border:1px solid rgba(6,182,212,0.3);
+  color:#06b6d4;font-size:12px;font-weight:700;
   padding:6px 16px;border-radius:999px;
   letter-spacing:0.1em;text-transform:uppercase;
   width:fit-content;
 }
 .badge-dot{
-  width:7px;height:7px;background:#22d3a0;
+  width:7px;height:7px;background:#06b6d4;
   border-radius:50%;animation:pulse 2s infinite;
   box-shadow:0 0 8px rgba(34,211,160,0.6);
 }
@@ -193,7 +194,7 @@ nav.scrolled .nav-cta{display:inline-block}
   text-decoration:none;font-weight:500;
   transition:all 0.2s;
 }
-.hchip:hover{color:var(--text);border-color:var(--accent);background:rgba(99,102,241,0.1)}
+.hchip:hover{color:var(--text);border-color:var(--accent);background:rgba(6,182,212,0.1)}
 .hchip svg{width:13px;height:13px;flex-shrink:0;stroke:var(--accent2)}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn-primary{
@@ -202,7 +203,7 @@ nav.scrolled .nav-cta{display:inline-block}
   font-size:14px;font-weight:600;text-decoration:none;
   transition:opacity 0.2s,transform 0.2s;display:inline-flex;
   align-items:center;gap:8px;
-  box-shadow:0 8px 30px rgba(99,102,241,0.35);
+  box-shadow:0 8px 30px rgba(6,182,212,0.35);
 }
 .btn-primary:hover{opacity:0.88;transform:translateY(-2px)}
 .btn-primary svg{width:16px;height:16px}
@@ -213,14 +214,12 @@ nav.scrolled .nav-cta{display:inline-block}
   text-decoration:none;display:inline-block;
   transition:all 0.2s;
 }
-.btn-ghost:hover{background:var(--surface);border-color:rgba(255,255,255,0.3)}
+.btn-ghost:hover{background:var(--surface);border-color:rgba(6,182,212,0.5)}
 .hero-stats{display:flex;gap:32px;padding-top:8px}
 .hstat-n{
   font-family:"Syne",sans-serif;font-size:28px;
   font-weight:800;letter-spacing:-0.04em;
-  background:var(--gradient2);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:#0a0a0a;
 }
 .hstat-l{font-size:12px;color:var(--text3);font-weight:500;margin-top:2px}
 
@@ -231,7 +230,7 @@ nav.scrolled .nav-cta{display:inline-block}
   border-radius:28px;overflow:hidden;
   border:1px solid var(--border2);position:relative;
   background:var(--dark3);
-  box-shadow:0 32px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.05);
+  box-shadow:0 32px 80px rgba(0,0,0,0.12),0 0 0 1px rgba(0,0,0,0.07);
 }
 .photo-frame img{
   position:absolute;inset:0;width:100%;height:100%;
@@ -250,9 +249,9 @@ nav.scrolled .nav-cta{display:inline-block}
 .photo-tag{
   position:absolute;bottom:-18px;left:50%;
   transform:translateX(-50%);
-  background:rgba(9,9,15,0.95);
-  border:1px solid var(--border2);
-  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.85);
+  border:1px solid var(--border);
+  backdrop-filter:blur(8px);
   border-radius:999px;padding:6px 18px;
   font-size:11.5px;font-weight:600;color:var(--text2);
   white-space:nowrap;z-index:2;
@@ -262,7 +261,7 @@ nav.scrolled .nav-cta{display:inline-block}
   width:6px;height:6px;border-radius:50%;
   background:var(--border2);transition:all 0.3s;cursor:pointer;
 }
-.photo-dots span.active{background:var(--accent);transform:scale(1.4);box-shadow:0 0 8px rgba(99,102,241,0.6)}
+.photo-dots span.active{background:var(--accent);transform:scale(1.4);box-shadow:0 0 8px rgba(6,182,212,0.6)}
 
 /* ─── SECTION BASE ─── */
 section{padding:100px clamp(1.25rem,5vw,5rem)}
@@ -304,7 +303,7 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   width:100%;aspect-ratio:2/3;border-radius:20px;
   overflow:hidden;border:1px solid var(--border2);
   position:relative;background:var(--dark3);
-  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  box-shadow:0 20px 60px rgba(0,0,0,0.1);
 }
 .about-photo img{
   position:absolute;inset:0;width:100%;height:100%;
@@ -318,13 +317,11 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   border-radius:14px;padding:20px;
   transition:border-color 0.2s;
 }
-.callout:hover{border-color:rgba(99,102,241,0.4)}
+.callout:hover{border-color:rgba(6,182,212,0.4)}
 .callout-n{
   font-family:"Syne",sans-serif;font-size:30px;
   font-weight:800;letter-spacing:-0.04em;
-  background:var(--gradient);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:#0a0a0a;
 }
 .callout-l{font-size:12px;color:var(--text3);margin-top:3px;font-weight:500}
 
@@ -337,7 +334,7 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   transition:border-color 0.25s,background 0.25s,transform 0.25s;
 }
 .sk-card:hover{
-  border-color:rgba(99,102,241,0.45);
+  border-color:rgba(6,182,212,0.45);
   background:var(--surface2);
   transform:translateY(-4px);
 }
@@ -351,7 +348,7 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 /* ── skill pill ── */
 .sp{
   display:inline-flex;align-items:center;gap:7px;
-  background:rgba(255,255,255,0.05);
+  background:rgba(0,0,0,0.04);
   border:1px solid var(--border);
   border-radius:8px;padding:6px 12px;
   font-size:12.5px;color:var(--text2);font-weight:500;
@@ -360,25 +357,25 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 }
 .sp:hover{
   color:var(--text);
-  border-color:rgba(99,102,241,0.45);
-  background:rgba(99,102,241,0.08);
+  border-color:rgba(6,182,212,0.45);
+  background:rgba(6,182,212,0.08);
   transform:translateY(-2px);
-  box-shadow:0 4px 16px rgba(99,102,241,0.15);
+  box-shadow:0 4px 16px rgba(6,182,212,0.15);
 }
 .sp-blue{
   display:inline-flex;align-items:center;gap:7px;
-  background:rgba(99,102,241,0.1);
-  border:1px solid rgba(99,102,241,0.28);
+  background:rgba(6,182,212,0.1);
+  border:1px solid rgba(6,182,212,0.28);
   border-radius:8px;padding:6px 12px;
   font-size:12.5px;color:var(--accent2);font-weight:500;
   transition:all 0.2s;cursor:default;
   user-select:none;
 }
 .sp-blue:hover{
-  background:rgba(99,102,241,0.18);
-  border-color:rgba(99,102,241,0.55);
+  background:rgba(6,182,212,0.18);
+  border-color:rgba(6,182,212,0.55);
   transform:translateY(-2px);
-  box-shadow:0 4px 16px rgba(99,102,241,0.2);
+  box-shadow:0 4px 16px rgba(6,182,212,0.2);
 }
 .si{width:20px;height:20px;object-fit:contain;flex-shrink:0;display:block;border-radius:3px}
 .si-use{width:20px;height:20px;flex-shrink:0;display:block;overflow:visible}
@@ -399,7 +396,7 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   position:absolute;left:-36px;top:6px;
   width:16px;height:16px;border-radius:50%;
   background:var(--gradient);
-  box-shadow:0 0 0 4px rgba(99,102,241,0.2),0 0 16px rgba(99,102,241,0.4);
+  box-shadow:0 0 0 4px rgba(6,182,212,0.2),0 0 16px rgba(6,182,212,0.4);
 }
 .t-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:8px}
 .t-role{
@@ -408,8 +405,8 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 }
 .t-co{font-size:14px;color:var(--accent2);font-weight:600;margin-top:3px}
 .t-date{
-  background:rgba(99,102,241,0.12);
-  border:1px solid rgba(99,102,241,0.25);
+  background:rgba(6,182,212,0.12);
+  border:1px solid rgba(6,182,212,0.25);
   border-radius:999px;padding:5px 14px;
   font-size:12px;color:var(--accent2);font-weight:600;white-space:nowrap;
 }
@@ -457,9 +454,9 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   opacity:0;transition:opacity 0.3s;
 }
 .proj-card:hover{
-  border-color:rgba(99,102,241,0.5);
+  border-color:rgba(6,182,212,0.5);
   transform:translateY(-6px);
-  box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(99,102,241,0.2);
+  box-shadow:0 20px 60px rgba(0,0,0,0.1),0 0 0 1px rgba(6,182,212,0.2);
 }
 .proj-card:hover::before{opacity:1}
 /* card body */
@@ -471,12 +468,12 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 .proj-head{display:flex;align-items:flex-start;gap:14px}
 .proj-ico{
   width:48px;height:48px;
-  background:rgba(99,102,241,0.12);
-  border:1px solid rgba(99,102,241,0.25);
+  background:rgba(6,182,212,0.12);
+  border:1px solid rgba(6,182,212,0.25);
   border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
   transition:background 0.2s,border-color 0.2s;
 }
-.proj-card:hover .proj-ico{background:rgba(99,102,241,0.22);border-color:rgba(99,102,241,0.45)}
+.proj-card:hover .proj-ico{background:rgba(6,182,212,0.22);border-color:rgba(6,182,212,0.45)}
 .proj-ico svg{width:22px;height:22px;stroke:var(--accent2);fill:none}
 .proj-name{
   font-family:"Syne",sans-serif;font-size:18px;
@@ -497,7 +494,7 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   content:"";width:5px;height:5px;
   background:var(--accent);border-radius:50%;
   flex-shrink:0;margin-top:9px;
-  box-shadow:0 0 6px rgba(99,102,241,0.6);
+  box-shadow:0 0 6px rgba(6,182,212,0.6);
 }
 /* tech stack footer */
 .proj-stack{
@@ -514,25 +511,25 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 }
 .stag{
   display:inline-flex;align-items:center;gap:5px;
-  background:rgba(99,102,241,0.1);
-  border:1px solid rgba(99,102,241,0.28);
+  background:rgba(6,182,212,0.1);
+  border:1px solid rgba(6,182,212,0.28);
   border-radius:6px;padding:4px 10px;
   font-size:11.5px;color:var(--accent2);font-weight:600;
   transition:all 0.2s;
 }
 .stag:hover{
-  background:rgba(99,102,241,0.2);
-  border-color:rgba(99,102,241,0.5);
+  background:rgba(6,182,212,0.2);
+  border-color:rgba(6,182,212,0.5);
   transform:translateY(-2px);
-  box-shadow:0 4px 12px rgba(99,102,241,0.2);
+  box-shadow:0 4px 12px rgba(6,182,212,0.2);
 }
 .stag-ico{width:14px;height:14px;object-fit:contain;border-radius:2px;flex-shrink:0}
 .stag-ico-svg{width:14px;height:14px;flex-shrink:0;display:block;overflow:visible}
 .proj-img{
-  width:100%;height:260px;
-  object-fit:cover;object-position:top;
-  border-radius:22px 22px 0 0;display:block;
-  border-bottom:1px solid var(--border);
+  width:100%;height:auto;
+  display:block;
+  border-radius:0 0 22px 22px;
+  border-top:1px solid var(--border);
 }
 .proj-pts-2col{columns:2;column-gap:28px}
 @media(max-width:900px){.proj-pts-2col{columns:1}}
@@ -544,12 +541,12 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   border-radius:20px;padding:32px;margin-bottom:14px;
   transition:border-color 0.2s;
 }
-.edu-card:hover{border-color:rgba(99,102,241,0.35)}
+.edu-card:hover{border-color:rgba(6,182,212,0.35)}
 .edu-top{display:flex;align-items:flex-start;gap:18px;margin-bottom:20px}
 .edu-ico{
   width:48px;height:48px;
-  background:rgba(99,102,241,0.12);
-  border:1px solid rgba(99,102,241,0.25);
+  background:rgba(6,182,212,0.12);
+  border:1px solid rgba(6,182,212,0.25);
   border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
 .edu-ico svg{width:22px;height:22px;stroke:var(--accent2);fill:none}
@@ -582,12 +579,12 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   border-radius:12px;margin-bottom:10px;
   transition:border-color 0.2s,background 0.2s;
 }
-.cert-row:hover{border-color:rgba(99,102,241,0.3);background:var(--surface2)}
+.cert-row:hover{border-color:rgba(6,182,212,0.3);background:var(--surface2)}
 .cert-row:last-child{margin-bottom:0}
 .cert-ico{
   width:38px;height:38px;
-  background:rgba(99,102,241,0.12);
-  border:1px solid rgba(99,102,241,0.2);
+  background:rgba(6,182,212,0.12);
+  border:1px solid rgba(6,182,212,0.2);
   border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
 .cert-ico svg{width:17px;height:17px;stroke:var(--accent2);fill:none}
@@ -598,8 +595,8 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 #contact{padding:80px clamp(1.25rem,5vw,5rem) 100px}
 .cta-box{
   max-width:1200px;margin:0 auto;
-  background:linear-gradient(135deg,#1a1a2e 0%,#1e1e3a 50%,#1a1a2e 100%);
-  border:1px solid rgba(99,102,241,0.3);
+  background:linear-gradient(135deg,#cffafe 0%,#a5f3fc 50%,#cffafe 100%);
+  border:1px solid rgba(6,182,212,0.3);
   border-radius:28px;padding:60px;
   display:flex;flex-wrap:wrap;
   justify-content:space-between;align-items:center;gap:36px;
@@ -609,7 +606,7 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   content:"";position:absolute;
   top:-80px;right:-80px;
   width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(99,102,241,0.25) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(6,182,212,0.25) 0%,transparent 70%);
   pointer-events:none;
 }
 .cta-box::after{
@@ -641,7 +638,7 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
   transition:border-color 0.2s,background 0.2s;
 }
-.cta-link:hover .ico{border-color:var(--accent);background:rgba(99,102,241,0.12)}
+.cta-link:hover .ico{border-color:var(--accent);background:rgba(6,182,212,0.12)}
 .cta-link svg{width:16px;height:16px}
 
 /* ─── FOOTER ─── */
@@ -757,7 +754,7 @@ footer span{color:var(--accent2)}
 <!-- NAV -->
 <nav id="nav">
   <a class="nav-logo" href="#home">
-    <span class="nav-logo-dot"></span>PPJ. Lozano
+    <span class="nav-logo-dot"></span>Lozano <span style="font-weight:400;color:var(--text2)">- Software Developer</span>
   </a>
   <ul class="nav-links">
     <li><a href="#home" data-sec="home">Home</a></li>
@@ -767,7 +764,6 @@ footer span{color:var(--accent2)}
     <li><a href="#projects" data-sec="projects">Projects</a></li>
     <li><a href="#education" data-sec="education">Education</a></li>
   </ul>
-  <a class="nav-cta" href="mailto:lozanodev2001@gmail.com">Hire Me</a>
   <button class="hamburger" id="ham" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -805,7 +801,7 @@ footer span{color:var(--accent2)}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Urdaneta City, PH
         </span>
-        <a class="hchip" href="https://www.linkedin.com/in/lozano-dev-2a4b27409/" target="_blank" rel="noopener noreferrer">
+        <a class="hchip" href="https://www.linkedin.com/in/perry-philip-lozano-2a4b27409/" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
@@ -819,11 +815,14 @@ footer span{color:var(--accent2)}
           View Projects
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a class="btn-ghost" href="#about">About Me</a>
+        <a class="btn-ghost" href="#" onclick="downloadResume();return false;">
+          Download Resume
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;vertical-align:middle;margin-left:6px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
       </div>
       <div class="hero-stats reveal reveal-d5">
         <div>
-          <div class="hstat-n">3+</div>
+          <div class="hstat-n">4+</div>
           <div class="hstat-l">Full-stack projects</div>
         </div>
         <div>
@@ -865,7 +864,7 @@ footer span{color:var(--accent2)}
         <p>My foundation spans full-stack web and mobile development — Laravel on the backend, Flutter and React Native on mobile, and solid SQL database design throughout. I thrive in agile environments and take pride in writing code that is clean, well-documented, and maintainable by a team.</p>
         <p>Looking to contribute my technical skills and growth mindset to an innovative development team. Open to full-time roles, freelance work, and meaningful collaborations.</p>
         <div class="callouts">
-          <div class="callout"><div class="callout-n">3+</div><div class="callout-l">Full-stack projects</div></div>
+          <div class="callout"><div class="callout-n">4+</div><div class="callout-l">Full-stack projects</div></div>
           <div class="callout"><div class="callout-n">1</div><div class="callout-l">Internship completed</div></div>
           <div class="callout"><div class="callout-n">4</div><div class="callout-l">Programming languages</div></div>
           <div class="callout"><div class="callout-n">2026</div><div class="callout-l">BSIT Graduate</div></div>
@@ -1117,11 +1116,11 @@ footer span{color:var(--accent2)}
           <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Laravel Reverb</span>
           <span class="stag"><img class="stag-ico" src="icons/git.jpg" alt="">Git</span>
         </div>
+        <img class="proj-img" src="projects/pcf_presenter.png" alt="PCF Presenter — desktop app screenshot">
       </div>
 
       <!-- BrewPoint -->
       <div class="proj-card reveal reveal-d5" style="grid-column:1/-1">
-        <img class="proj-img" src="projects/brewpoint.png" alt="BrewPoint — Coffee Shop POS screenshot">
         <div class="proj-body">
           <div class="proj-head">
             <div class="proj-ico">
@@ -1136,14 +1135,14 @@ footer span{color:var(--accent2)}
               <p class="proj-type">Web App &nbsp;·&nbsp; Point of Sale &nbsp;·&nbsp; Freelance</p>
             </div>
           </div>
-          <p class="proj-desc">Full-featured POS and business management system built for coffee shops — covering order taking at the counter to payroll processing in the back office, with role-based access for Admins, Managers, and Cashiers.</p>
+          <p class="proj-desc">Coffee shop management system centered on three core workflows — Point of Sale, Inventory, and Payroll — built as a full-stack Laravel web app with role-based access for Admins, Managers, and Cashiers.</p>
           <ul class="proj-pts proj-pts-2col">
-            <li>Built a complete POS flow with a product grid, real-time cart, and automatic ingredient stock deduction per sale using a pivot table for fractional consumption per serving</li>
-            <li>Implemented role-based access control with three tiers — Super Admin, Manager, and Cashier — each with scoped module access</li>
-            <li>Developed Inventory, Supplier, and Purchase Order modules with low-stock alerts, stock adjustment modals, and cost-per-unit tracking</li>
-            <li>Created Employee and Payroll modules with attendance-based payroll computation and a pay-run approval flow</li>
-            <li>Built Sales, Inventory, and Payroll reports with date range filtering and Chart.js visualizations</li>
-            <li>Added a Settings module with live logo upload that dynamically syncs to the browser favicon and sidebar branding across all pages</li>
+            <li>Built a complete POS flow with a category-filtered product grid, real-time cart, and receipt generation — voiding restricted to Manager and Admin roles</li>
+            <li>Wired POS orders to inventory through a <code>product_ingredients</code> pivot table, automatically deducting fractional ingredient quantities on every sale</li>
+            <li>Developed the Inventory module with Stock In / Out / Adjust modals, cost-per-unit tracking, and a live low-stock badge in the sidebar</li>
+            <li>Added Supplier and Purchase Order management — receive a PO to instantly update ingredient stock levels</li>
+            <li>Built the Payroll module on top of attendance records — logs daily time-in/time-out, computes pay per period, and tracks paid status</li>
+            <li>Implemented an ingredient cost breakdown panel on the Product form to surface estimated cost-per-serving from linked inventory items</li>
           </ul>
         </div>
         <div class="proj-stack">
@@ -1160,6 +1159,7 @@ footer span{color:var(--accent2)}
           </span>
           <span class="stag"><img class="stag-ico" src="icons/git.jpg" alt="">Git</span>
         </div>
+        <img class="proj-img" src="projects/brewpoint.png" alt="BrewPoint — Coffee Shop POS screenshot">
       </div>
 
     </div>
@@ -1219,7 +1219,7 @@ footer span{color:var(--accent2)}
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.12.99.37 1.97.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.84.33 1.82.58 2.81.7A2 2 0 0122 16.92z"/></svg></span>
         09674664117
       </a>
-      <a class="cta-link" href="https://www.linkedin.com/in/lozano-dev-2a4b27409/" target="_blank" rel="noopener noreferrer">
+      <a class="cta-link" href="https://www.linkedin.com/in/perry-philip-lozano-2a4b27409/" target="_blank" rel="noopener noreferrer">
         <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></span>
         LinkedIn
       </a>
@@ -1231,9 +1231,27 @@ footer span{color:var(--accent2)}
   </div>
 </section>
 
-<footer>© 2026 <span>Perry Philip J. Lozano</span> · Built with care and clean code.</footer>
+<footer>© 2026 · Designed and developed by <span>Perry Philip J. Lozano</span>.</footer>
 
 <script>
+// ── RESUME DOWNLOAD ───────────────────────────────────
+function downloadResume(){
+  const file='files/Lozano, Perry Philip J. - Resume.pdf';
+  fetch(file)
+    .then(r=>r.blob())
+    .then(blob=>{
+      const url=URL.createObjectURL(new Blob([blob],{type:'application/octet-stream'}));
+      const a=document.createElement('a');
+      a.href=url;
+      a.download='Lozano_Perry_Philip_Resume.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    })
+    .catch(()=>window.open(file,'_blank'));
+}
+
 // ── IMAGE SLIDESHOW ──────────────────────────────────
 const heroImgs  = [document.getElementById('heroImg0'), document.getElementById('heroImg1')];
 const aboutImgs = [document.getElementById('aboutImg0'), document.getElementById('aboutImg1')];
