@@ -528,6 +528,12 @@ section{padding:100px clamp(1.25rem,5vw,5rem)}
 }
 .stag-ico{width:14px;height:14px;object-fit:contain;border-radius:2px;flex-shrink:0}
 .stag-ico-svg{width:14px;height:14px;flex-shrink:0;display:block;overflow:visible}
+.proj-img{
+  width:100%;height:260px;
+  object-fit:cover;object-position:top;
+  border-radius:22px 22px 0 0;display:block;
+  border-bottom:1px solid var(--border);
+}
 .proj-pts-2col{columns:2;column-gap:28px}
 @media(max-width:900px){.proj-pts-2col{columns:1}}
 
@@ -1109,6 +1115,49 @@ footer span{color:var(--accent2)}
             WebSockets
           </span>
           <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Laravel Reverb</span>
+          <span class="stag"><img class="stag-ico" src="icons/git.jpg" alt="">Git</span>
+        </div>
+      </div>
+
+      <!-- BrewPoint -->
+      <div class="proj-card reveal reveal-d5" style="grid-column:1/-1">
+        <img class="proj-img" src="projects/brewpoint.png" alt="BrewPoint — Coffee Shop POS screenshot">
+        <div class="proj-body">
+          <div class="proj-head">
+            <div class="proj-ico">
+              <svg viewBox="0 0 24 24" stroke-width="1.75" fill="none">
+                <path d="M17 8h1a4 4 0 010 8h-1"/>
+                <path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/>
+                <path d="M6 2v3M10 2v3M14 2v3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="proj-name">BrewPoint</p>
+              <p class="proj-type">Web App &nbsp;·&nbsp; Point of Sale &nbsp;·&nbsp; Freelance</p>
+            </div>
+          </div>
+          <p class="proj-desc">Full-featured POS and business management system built for coffee shops — covering order taking at the counter to payroll processing in the back office, with role-based access for Admins, Managers, and Cashiers.</p>
+          <ul class="proj-pts proj-pts-2col">
+            <li>Built a complete POS flow with a product grid, real-time cart, and automatic ingredient stock deduction per sale using a pivot table for fractional consumption per serving</li>
+            <li>Implemented role-based access control with three tiers — Super Admin, Manager, and Cashier — each with scoped module access</li>
+            <li>Developed Inventory, Supplier, and Purchase Order modules with low-stock alerts, stock adjustment modals, and cost-per-unit tracking</li>
+            <li>Created Employee and Payroll modules with attendance-based payroll computation and a pay-run approval flow</li>
+            <li>Built Sales, Inventory, and Payroll reports with date range filtering and Chart.js visualizations</li>
+            <li>Added a Settings module with live logo upload that dynamically syncs to the browser favicon and sidebar branding across all pages</li>
+          </ul>
+        </div>
+        <div class="proj-stack">
+          <span class="proj-stack-label">Tech Stack</span>
+          <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Laravel 11</span>
+          <span class="stag"><img class="stag-ico" src="icons/php.jpg" alt="">PHP 8.2</span>
+          <span class="stag"><img class="stag-ico" src="icons/laravel.jpg" alt="">Blade</span>
+          <span class="stag"><img class="stag-ico" src="icons/tailwind.jpg" alt="">Tailwind CSS</span>
+          <span class="stag"><img class="stag-ico" src="icons/javascript.jpg" alt="">Vanilla JS</span>
+          <span class="stag"><img class="stag-ico" src="icons/mysql.jpg" alt="">MySQL</span>
+          <span class="stag">
+            <svg class="stag-ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9l9 6 9-6"/></svg>
+            Chart.js
+          </span>
           <span class="stag"><img class="stag-ico" src="icons/git.jpg" alt="">Git</span>
         </div>
       </div>
